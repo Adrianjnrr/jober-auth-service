@@ -8,7 +8,6 @@
     "build": {
       "executor": "nx:run-commands",
       "dependsOn": ["generate-types"],
-      
 
       "configurations": {
         "development": {
@@ -16,6 +15,7 @@
         }
       }
     },
+
     "serve": {
       "continuous": true,
       "executor": "@nx/js:node",
@@ -35,22 +35,19 @@
       }
     },
     "test": {
-      "options": {
-        "passWithNoTests": true
-      }
+      "dependsOn": ["generate-types"]
     },
-    "generate-types":{
+    "generate-types": {
       "command": "prisma generate",
       "options": {
-        "cwd":"apps/jobber-auth"
+        "cwd": "apps/jobber-auth"
       }
     },
     "migrate-prisma": {
       "command": "prisma migrate dev",
       "options": {
-        "cwd":"apps/jobber-auth"
+        "cwd": "apps/jobber-auth"
       }
     }
-
   }
 }
