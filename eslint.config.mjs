@@ -10,15 +10,10 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
-      '@typescript-eslint/ban-types': [
-        'warn',
-        {
-          types: {
-            '{}': false, // disable warning for {}
-          },
-          extendDefaults: true,
-        },
-      ],
+      // '@typescript-eslint/ban-types': [
+      //   'warn',
+
+      // ],
       '@nx/enforce-module-boundaries': [
         'error',
         {
